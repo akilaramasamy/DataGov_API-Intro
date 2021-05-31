@@ -12,7 +12,7 @@ namespace DataGov_API_Intro.Controllers
     {
         HttpClient httpClient;
 
-        static string BASE_URL = "https://developer.nps.gov/api/v1/";
+        static string BASE_URL = "https://developer.nps.gov/api/v1";
         static string API_KEY = "mdBybOievMdeX3eYSC0MhFu3U7xRV18xHAPG04qb"; //Add your API key here inside ""
 
         //static string BASE_URL = "https://data.cdc.gov/api/views/hk9y-quqm/rows.json";
@@ -40,15 +40,15 @@ namespace DataGov_API_Intro.Controllers
 
             Parks parks = null;
 
-            httpClient.BaseAddress = new Uri(NATIONAL_PARK_API_PATH);
-            httpClient.BaseAddress = new Uri(BASE_URL);
+         httpClient.BaseAddress = new Uri(NATIONAL_PARK_API_PATH);
+         //   httpClient.BaseAddress = new Uri(BASE_URL);
 
             try
             {
-                //HttpResponseMessage response = httpClient.GetAsync(NATIONAL_PARK_API_PATH)
-                  //                                      .GetAwaiter().GetResult();
-                HttpResponseMessage response = httpClient.GetAsync(BASE_URL)
-                                                      .GetAwaiter().GetResult();
+                HttpResponseMessage response = httpClient.GetAsync(NATIONAL_PARK_API_PATH)
+                                                        .GetAwaiter().GetResult();
+                //HttpResponseMessage response = httpClient.GetAsync(BASE_URL)
+                  //                                  .GetAwaiter().GetResult();
 
 
 
